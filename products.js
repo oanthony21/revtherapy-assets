@@ -221,9 +221,33 @@
     el.setAttribute("data-rt-done","1");
   }
 
+  /* ---- pcard renderer: outputs the Gear page's rt-pcard markup ---- */
+  function pcardCard(p, extra){
+    var link=withTag(p.url);
+    return '<div class="rt-pcard'+(extra?' rt-extra':'')+'">'
+      + '<img class="rt-pcard-img" src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy" />'
+      + '<div class="rt-pcard-badge-wrap"><span class="rt-pcard-badge">'+esc(p.badge||p.group||"")+'</span></div>'
+      + '<div class="rt-pcard-body">'
+      + '<div class="rt-pcard-name">'+esc(p.name)+'</div>'
+      + '<div class="rt-pcard-desc">'+esc(p.hook)+'</div>'
+      + '<div class="rt-pcard-stars"><span class="stars">\u2605\u2605\u2605\u2605\u2605</span><span class="count">'+p.rating.toFixed(1)+' \u00B7 '+p.reviews.toLocaleString()+'+ reviews</span></div>'
+      + '<div class="rt-pcard-footer">'
+      + (p.price?('<div class="rt-pcard-price">'+esc(p.price)+' <small>on Amazon</small></div>'):'')
+      + '<a href="'+esc(link)+'" target="_blank" rel="sponsored nofollow noopener" class="rt-pcard-btn">View \u2192</a>'
+      + '</div></div></div>';
+  }
+  function pcardRender(el){
+    var val=(el.getAttribute("data-rt-pcards")||"").toLowerCase();
+    var top=parseInt(el.getAttribute("data-rt-top"),10); if(isNaN(top)||top<0) top=3;
+    var list=RT_PRODUCTS.filter(function(p){return String(p.group||p.category||"").toLowerCase()===val;});
+    el.innerHTML=list.map(function(p,i){return pcardCard(p, i>=top);}).join("");
+    el.setAttribute("data-rt-done","1");
+  }
+
   function boot(){
     var n=document.querySelectorAll(".rt-shop:not([data-rt-done])"); for(var i=0;i<n.length;i++) render(n[i]);
     var g=document.querySelectorAll(".rt-gear-grid[data-rt-gear]:not([data-rt-done])"); for(var j=0;j<g.length;j++) gearRender(g[j]);
+    var pc=document.querySelectorAll(".rt-pgrid[data-rt-pcards]:not([data-rt-done])"); for(var k=0;k<pc.length;k++) pcardRender(pc[k]);
   }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot); else boot();
 })();
