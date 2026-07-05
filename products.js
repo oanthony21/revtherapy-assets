@@ -22,10 +22,10 @@
   var RT_PRODUCTS = [
 
     /* ---------- CAR ACCESSORIES ---------- */
-    { group:"Car Accessories", badge:"Detailing", name:"Foam Cannon Kit",
-      url:"https://amzn.to/3QBFOro", img:"https://m.media-amazon.com/images/I/71wQ+NQlUVL._AC_SL1500_.jpg",
-      hook:"Best budget detailing setup. Thick foam, easy to use, no pressure washer needed.",
-      price:"$35", rating:4.7, reviews:12400 },
+    { group:"Car Accessories", badge:"Detailing", name:"Chemical Guys TORQ Foam Blaster 6", featured:true,
+      url:"https://amzn.to/3QDFf0a", img:"https://m.media-amazon.com/images/I/81V0g6EYZqL._AC_SL1500_.jpg",
+      hook:"Attaches to a regular garden hose, no pressure washer needed. Consistently rated the best foam gun for home use in real testing.",
+      price:"$35-40", rating:4.5, reviews:12000 },
 
     { group:"Car Accessories", badge:"Safety", name:"Rove R2-4K Dash Cam",
       url:"https://amzn.to/4ejRp8h", img:"https://m.media-amazon.com/images/I/91AtC7jFIZL._AC_SX679_.jpg",
@@ -37,10 +37,10 @@
       hook:"Read and clear engine codes instantly. Know your car better than your mechanic.",
       price:"$40", rating:4.6, reviews:21000 },
 
-    { group:"Car Accessories", badge:"Detailing", name:"Meguiar's Scratch-X 2.0",
+    { group:"Car Accessories", badge:"Detailing", name:"Meguiar's Scratch-X 2.0", featured:true,
       url:"https://amzn.to/49hVtCs", img:"https://m.media-amazon.com/images/I/81wqa5jjhCL._SL1500_.jpg",
       hook:"Removes light scratches, swirl marks and blemishes in one step. No machine needed. Works on all paint colours.",
-      price:"$12", rating:4.5, reviews:18000 },
+      price:"$12", rating:4.2, reviews:11000 },
 
     { group:"Car Accessories", badge:"Detailing", name:"PULIDIKI Car Cleaning Gel",
       url:"https://amzn.to/4tCsCA5", img:"https://m.media-amazon.com/images/I/71R0gev+0zL._AC_SL1500_.jpg",
@@ -69,7 +69,7 @@
       price:"$25", rating:4.5, reviews:28000 },
 
     /* ---------- TECH ---------- */
-    { group:"Tech", badge:"CarPlay", name:"Carlinkit Wireless CarPlay Adapter",
+    { group:"Tech", badge:"CarPlay", name:"Carlinkit Wireless CarPlay Adapter", featured:true,
       url:"https://amzn.to/4gd0nFa", img:"https://m.media-amazon.com/images/I/61QCvBu+VcL._AC_SL1202_.jpg",
       hook:"Converts wired CarPlay to wireless in 2 minutes. Auto-connects every start. No more cables.",
       price:"$43.99", rating:4.5, reviews:15000 },
@@ -195,6 +195,33 @@
     el.setAttribute("data-rt-done","1");
   }
 
-  function boot(){ var n=document.querySelectorAll(".rt-shop:not([data-rt-done])"); for(var i=0;i<n.length;i++) render(n[i]); }
+  /* ---- gear-card renderer: outputs the site's existing rt-gear markup ---- */
+  function gearCard(p){
+    var link=withTag(p.url);
+    return '<div class="rt-gear-card">'
+      + '<img class="rt-gear-img" src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy" />'
+      + '<div class="rt-gear-badge-wrap"><span class="rt-gear-badge">'+esc(p.badge||p.group||"")+'</span></div>'
+      + '<div class="rt-gear-body">'
+      + '<div class="rt-gear-name">'+esc(p.name)+'</div>'
+      + '<div class="rt-gear-desc">'+esc(p.hook)+'</div>'
+      + '<div class="rt-gear-stars"><span class="stars">\u2605\u2605\u2605\u2605\u2605</span><span class="count">'+p.rating.toFixed(1)+' \u00B7 '+p.reviews.toLocaleString()+'+ reviews</span></div>'
+      + '<div class="rt-gear-footer">'
+      + (p.price?('<div class="rt-gear-price">'+esc(p.price)+' <small>on Amazon</small></div>'):'')
+      + '<a href="'+esc(link)+'" target="_blank" rel="sponsored nofollow noopener" class="rt-gear-btn">View \u2192</a>'
+      + '</div></div></div>';
+  }
+  function gearRender(el){
+    var val=el.getAttribute("data-rt-gear")||"", list=RT_PRODUCTS.slice();
+    if(!val || val.toLowerCase()==="featured") list=list.filter(function(p){return p.featured;});
+    else list=list.filter(function(p){return String(p.group||p.category||"").toLowerCase()===val.toLowerCase();});
+    var lim=el.getAttribute("data-rt-limit"); if(lim) list=list.slice(0, parseInt(lim,10)||list.length);
+    el.innerHTML=list.map(gearCard).join("");
+    el.setAttribute("data-rt-done","1");
+  }
+
+  function boot(){
+    var n=document.querySelectorAll(".rt-shop:not([data-rt-done])"); for(var i=0;i<n.length;i++) render(n[i]);
+    var g=document.querySelectorAll(".rt-gear-grid[data-rt-gear]:not([data-rt-done])"); for(var j=0;j<g.length;j++) gearRender(g[j]);
+  }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot); else boot();
 })();
