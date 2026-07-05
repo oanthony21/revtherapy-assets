@@ -21,7 +21,7 @@
   ================================================================ */
   var RT_PRODUCTS = [
 
-    /* ---------- CAR ACCESSORIES ---------- */
+    /* ---------- CAR ACCESSORIES ----------  */
     { group:"Car Accessories", badge:"Detailing", name:"Chemical Guys TORQ Foam Blaster 6",
       url:"https://amzn.to/3QDFf0a", img:"https://m.media-amazon.com/images/I/81V0g6EYZqL._AC_SL1500_.jpg",
       hook:"Attaches to a regular garden hose, no pressure washer needed. Consistently rated the best foam gun for home use in real testing.",
