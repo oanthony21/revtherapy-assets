@@ -22,7 +22,7 @@
   var RT_PRODUCTS = [
 
     /* ---------- CAR ACCESSORIES ---------- */
-    { group:"Car Accessories", badge:"Detailing", name:"Chemical Guys TORQ Foam Blaster 6", featured:true,
+    { group:"Car Accessories", badge:"Detailing", name:"Chemical Guys TORQ Foam Blaster 6",
       url:"https://amzn.to/3QDFf0a", img:"https://m.media-amazon.com/images/I/81V0g6EYZqL._AC_SL1500_.jpg",
       hook:"Attaches to a regular garden hose, no pressure washer needed. Consistently rated the best foam gun for home use in real testing.",
       price:"$35-40", rating:4.5, reviews:12000 },
@@ -37,7 +37,7 @@
       hook:"Read and clear engine codes instantly. Know your car better than your mechanic.",
       price:"$40", rating:4.6, reviews:21000 },
 
-    { group:"Car Accessories", badge:"Detailing", name:"Meguiar's Scratch-X 2.0", featured:true,
+    { group:"Car Accessories", badge:"Detailing", name:"Meguiar's Scratch-X 2.0",
       url:"https://amzn.to/49hVtCs", img:"https://m.media-amazon.com/images/I/81wqa5jjhCL._SL1500_.jpg",
       hook:"Removes light scratches, swirl marks and blemishes in one step. No machine needed. Works on all paint colours.",
       price:"$12", rating:4.2, reviews:11000 },
@@ -69,7 +69,7 @@
       price:"$25", rating:4.5, reviews:28000 },
 
     /* ---------- TECH ---------- */
-    { group:"Tech", badge:"CarPlay", name:"Carlinkit Wireless CarPlay Adapter", featured:true,
+    { group:"Tech", badge:"CarPlay", name:"Carlinkit Wireless CarPlay Adapter",
       url:"https://amzn.to/4gd0nFa", img:"https://m.media-amazon.com/images/I/61QCvBu+VcL._AC_SL1202_.jpg",
       hook:"Converts wired CarPlay to wireless in 2 minutes. Auto-connects every start. No more cables.",
       price:"$43.99", rating:4.5, reviews:15000 },
@@ -211,10 +211,12 @@
       + '</div></div></div>';
   }
   function gearRender(el){
-    var val=el.getAttribute("data-rt-gear")||"", list=RT_PRODUCTS.slice();
-    if(!val || val.toLowerCase()==="featured") list=list.filter(function(p){return p.featured;});
-    else list=list.filter(function(p){return String(p.group||p.category||"").toLowerCase()===val.toLowerCase();});
-    var lim=el.getAttribute("data-rt-limit"); if(lim) list=list.slice(0, parseInt(lim,10)||list.length);
+    var val=(el.getAttribute("data-rt-gear")||"").toLowerCase(), list=RT_PRODUCTS.slice();
+    var lim=parseInt(el.getAttribute("data-rt-limit"),10); if(isNaN(lim)) lim=0;
+    if(val==="featured"){ list=list.filter(function(p){return p.featured;}); }
+    else if(val==="latest" || val===""){ if(!lim) lim=3; }   /* latest = top of the list */
+    else { list=list.filter(function(p){return String(p.group||p.category||"").toLowerCase()===val;}); }
+    if(lim>0) list=list.slice(0, lim);
     el.innerHTML=list.map(gearCard).join("");
     el.setAttribute("data-rt-done","1");
   }
