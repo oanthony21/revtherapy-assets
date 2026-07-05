@@ -1,43 +1,3 @@
-<!-- ============================================================
-     REV.THERAPY — SINGLE-SOURCE PRODUCT ENGINE (preview)
-     This page shows the rendered result AND contains the code.
-
-     HOW IT WORKS (read once):
-     1. Everything inside the <script id="rt-products-src"> tag at the
-        bottom is your ONE file. Save it as  products.js  and host it
-        (GitHub Pages steps are in the chat).
-     2. On EACH page in Systeme.io, paste a Raw HTML block with ONE
-        mount div + ONE script tag, e.g.:
-
-          <div class="rt-shop" data-rt-limit="4"
-               data-rt-heading="Gear We Run"></div>
-          <script src="https://YOURNAME.github.io/revtherapy-assets/products.js"></script>
-
-     3. To add/remove a product later: edit products.js ONLY.
-        Every page updates automatically.
-
-     Per-page options (data-* attributes on the div):
-       data-rt-limit     -> show only N products (e.g. "4" on homepage)
-       data-rt-category  -> show one niche only (e.g. "Detailing")
-       data-rt-heading   -> section title
-       data-rt-eyebrow   -> small red label above title
-       data-rt-sub       -> one-line subtitle
-============================================================ -->
-
-<div style="background:#0d0d0d;min-height:100vh;">
-
-  <!-- Homepage example: 4 featured -->
-  <div class="rt-shop" data-rt-limit="4"
-       data-rt-eyebrow="Performance • Luxury • Passion"
-       data-rt-heading="Gear We Actually Run"
-       data-rt-sub="Hand-picked kit for the obsessed. Every pick is 4 stars or more with the reviews to back it."></div>
-
-</div>
-
-<!-- ============================================================
-     SAVE EVERYTHING INSIDE THIS SCRIPT AS  products.js
-============================================================ -->
-<script id="rt-products-src">
 (function(){
   /* ================================================================
      EDIT ONLY THIS LIST. One { } = one product.
@@ -146,4 +106,3 @@
   }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot); else boot();
 })();
-</script>
