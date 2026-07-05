@@ -105,6 +105,7 @@
     + ".rt-shop-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,7vw,50px);line-height:.95;letter-spacing:.02em;margin:0 0 20px;text-transform:uppercase;text-align:center;}"
     + ".rt-shop-sub{color:var(--m);font-size:14px;line-height:1.4;margin:0 auto 22px;max-width:56ch;text-align:center;}"
     + ".rt-shop-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}"
+    + ".rt-shop-grid.rt-solo{grid-template-columns:minmax(0,220px);justify-content:center;}"
     + ".rt-shop-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px;}"
     + ".rt-shop-carousel .rt-shop-card{flex:0 0 46%;min-width:160px;scroll-snap-align:start;}"
     + ".rt-shop-card{display:flex;flex-direction:column;background:var(--p);border:1px solid #262626;text-decoration:none;color:inherit;transition:transform .18s,border-color .18s;}"
@@ -123,7 +124,8 @@
     + ".rt-shop-price span{font-family:'Barlow';font-size:11px;font-weight:600;color:var(--m);letter-spacing:.04em;}"
     + ".rt-shop-cta{margin-top:6px;display:flex;align-items:center;justify-content:center;min-height:44px;background:var(--r);color:#0d0d0d;font-weight:700;letter-spacing:.07em;text-transform:uppercase;font-size:12px;padding:8px 10px;border:1px solid var(--r);transition:background .15s,color .15s;}"
     + ".rt-shop-card:hover .rt-shop-cta{background:transparent;color:var(--r);}"
-    + ".rt-shop-card.rt-min .rt-shop-body{gap:10px;}"
+    + ".rt-shop-card.rt-min .rt-shop-body{gap:10px;align-items:center;text-align:center;}"
+    + ".rt-shop-card.rt-min .rt-shop-cta{align-self:center;width:auto;padding:11px 20px;}"
     + ".rt-shop-card:focus-visible{outline:2px solid var(--r);outline-offset:3px;}"
     + ".rt-shop-disc{margin:20px 0 0;font-size:11px;color:#6a6a68;text-align:center;}"
     + ".rt-shop-empty{color:var(--m);font-size:14px;padding:8px 0;}"
@@ -180,7 +182,14 @@
     var cards=list.map(function(p){return card(p,{minimal:minimal,cta:cta});}).join("");
     var open,close;
     if(d.rtCarousel==="1"||d.rtCarousel==="true"){ open='<div class="rt-shop-carousel">'; close='</div>'; }
-    else { var style=""; if(d.rtCols){ var n=parseInt(d.rtCols,10)||0; if(n>0) style=' style="grid-template-columns:repeat('+n+',1fr)"'; } open='<div class="rt-shop-grid"'+style+'>'; close='</div>'; }
+    else {
+      var cls="rt-shop-grid", style="";
+      if(d.rtCols){ var n=parseInt(d.rtCols,10)||0;
+        if(n===1) cls+=" rt-solo";
+        else if(n>1) style=' style="grid-template-columns:repeat('+n+',1fr)"';
+      }
+      open='<div class="'+cls+'"'+style+'>'; close='</div>';
+    }
     var body = list.length ? (open+cards+close) : '<p class="rt-shop-empty">No products in this category yet.</p>';
     el.innerHTML = head + body + '<p class="rt-shop-disc">As an Amazon Associate, Rev.Therapy earns from qualifying purchases.</p>';
     el.setAttribute("data-rt-done","1");
