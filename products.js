@@ -25,7 +25,7 @@
     { group:"Car Accessories", badge:"Detailing", name:"Meguiar's Hybrid Ceramic Wax",
       url:"https://amzn.to/44Nza4W", img:"https://m.media-amazon.com/images/I/71zG-BEZ4hL._AC_SL1500_.jpg",
       hook:"Spray it on, rinse it off. Water beads and sheets straight off the paint — six months of gloss with a hose and a towel.",
-      price:"$15", rating:4.6, reviews:28000 },
+      price:"$17", rating:4.6, reviews:4600 },
     
     { group:"Car Accessories", badge:"Detailing", name:"Chemical Guys TORQ Foam Blaster 6",
       url:"https://amzn.to/3QDFf0a", img:"https://m.media-amazon.com/images/I/81V0g6EYZqL._AC_SL1500_.jpg",
