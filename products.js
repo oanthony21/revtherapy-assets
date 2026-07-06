@@ -1,6 +1,6 @@
 (function(){
   /* ================================================================
-     EDIT ONLY THIS LIST.One { } = one product.
+     EDIT ONLY THIS LIST. One { } = one product.
        group  : filter/section  -> "Car Accessories" | "Men Products" | "Tech"
        badge  : small label shown on the card (e.g. "Detailing")
        url    : Amazon link (full amazon.com link preferred; short amzn.to works)
@@ -23,7 +23,7 @@
 
     /* ---------- CAR ACCESSORIES ---------- */
     { group:"Car Accessories", badge:"Detailing", name:"Meguiar's Hybrid Ceramic Wax",
-      url:"https://amzn.to/44Nza4W", img:"https://m.media-amazon.com/images/I/71zG-BEZ4hL._AC_SL1500_.jpg",
+      url:"https://amzn.to/44Nza4W", img:"https://m.media-amazon.com/images/I/81CvuYh7IpL._AC_SL1500_.jpg",
       hook:"Spray it on, rinse it off. Water beads and sheets straight off the paint — six months of gloss with a hose and a towel.",
       price:"$17", rating:4.6, reviews:4600 },
     
@@ -134,6 +134,7 @@
     + ".rt-shop-card:focus-visible{outline:2px solid var(--r);outline-offset:3px;}"
     + ".rt-shop-disc{margin:20px 0 0;font-size:11px;color:#6a6a68;text-align:center;}"
     + ".rt-shop-empty{color:var(--m);font-size:14px;padding:8px 0;}"
+    + "@media(min-width:769px){.rt-pcard.rt-desk-only{display:flex!important;}}"
     + "@media(prefers-reduced-motion:reduce){.rt-shop-card,.rt-shop-media img{transition:none;}.rt-shop-card:hover{transform:none;}}";
     document.head.appendChild(css);
   }
@@ -227,9 +228,9 @@
   }
 
   /* ---- pcard renderer: outputs the Gear page's rt-pcard markup ---- */
-  function pcardCard(p, extra){
+  function pcardCard(p, cls){
     var link=withTag(p.url);
-    return '<div class="rt-pcard'+(extra?' rt-extra':'')+'">'
+    return '<div class="rt-pcard'+(cls?(' '+cls):'')+'">'
       + '<img class="rt-pcard-img" src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy" />'
       + '<div class="rt-pcard-badge-wrap"><span class="rt-pcard-badge">'+esc(p.badge||p.group||"")+'</span></div>'
       + '<div class="rt-pcard-body">'
@@ -243,9 +244,14 @@
   }
   function pcardRender(el){
     var val=(el.getAttribute("data-rt-pcards")||"").toLowerCase();
-    var top=parseInt(el.getAttribute("data-rt-top"),10); if(isNaN(top)||top<0) top=3;
+    var topD=parseInt(el.getAttribute("data-rt-top"),10); if(isNaN(topD)||topD<0) topD=6;
+    var topM=parseInt(el.getAttribute("data-rt-top-mobile"),10); if(isNaN(topM)||topM<0) topM=4;
+    if(topM>topD) topM=topD;
     var list=RT_PRODUCTS.filter(function(p){return String(p.group||p.category||"").toLowerCase()===val;});
-    el.innerHTML=list.map(function(p,i){return pcardCard(p, i>=top);}).join("");
+    el.innerHTML=list.map(function(p,i){
+      var cls = i>=topD ? "rt-extra" : (i>=topM ? "rt-extra rt-desk-only" : "");
+      return pcardCard(p, cls);
+    }).join("");
     el.setAttribute("data-rt-done","1");
   }
 
