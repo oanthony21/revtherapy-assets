@@ -4,7 +4,7 @@
        group  : filter/section  -> "Car Accessories" | "Men Products" | "Tech"
        badge  : small label shown on the card (e.g. "Detailing")
        url    : Amazon link (full amazon.com link preferred; short amzn.to works)
-       img    : image URL
+       img    : image URL  
        hook   : one/two lines
        price  : optional, e.g. "$35"
        rating : 0-5     reviews : integer
