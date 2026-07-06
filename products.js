@@ -1,6 +1,6 @@
 (function(){
   /* ================================================================
-     EDIT ONLY THIS LIST. One { } = one product.
+     EDIT ONLY THIS LIST.One { } = one product.
        group  : filter/section  -> "Car Accessories" | "Men Products" | "Tech"
        badge  : small label shown on the card (e.g. "Detailing")
        url    : Amazon link (full amazon.com link preferred; short amzn.to works)
