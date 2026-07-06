@@ -4,7 +4,7 @@
        group  : filter/section  -> "Car Accessories" | "Men Products" | "Tech"
        badge  : small label shown on the card (e.g. "Detailing")
        url    : Amazon link (full amazon.com link preferred; short amzn.to works)
-       img    : image URL  
+       img    : image URL
        hook   : one/two lines
        price  : optional, e.g. "$35"
        rating : 0-5     reviews : integer
@@ -134,7 +134,8 @@
     + ".rt-shop-card:focus-visible{outline:2px solid var(--r);outline-offset:3px;}"
     + ".rt-shop-disc{margin:20px 0 0;font-size:11px;color:#6a6a68;text-align:center;}"
     + ".rt-shop-empty{color:var(--m);font-size:14px;padding:8px 0;}"
-    + "@media(prefers-reduced-motion:reduce){.rt-shop-card,.rt-shop-media img{transition:none;}.rt-shop-card:hover{transform:none;}}";
+    + "@media (min-width: 769px){.rt-pcard.rt-desk-only{display:flex !important;}}"
+    + "@media (prefers-reduced-motion:reduce){.rt-shop-card,.rt-shop-media img{transition:none;}.rt-shop-card:hover{transform:none;}}";
     document.head.appendChild(css);
   }
 
@@ -245,9 +246,12 @@
     var val=(el.getAttribute("data-rt-pcards")||"").toLowerCase();
     var topD=parseInt(el.getAttribute("data-rt-top"),10); if(isNaN(topD)||topD<0) topD=6;
     var topM=parseInt(el.getAttribute("data-rt-top-mobile"),10); if(isNaN(topM)||topM<0) topM=4;
-    var top=(window.matchMedia && window.matchMedia("(min-width: 769px)").matches) ? topD : topM;
+    if(topM>topD) topM=topD;
     var list=RT_PRODUCTS.filter(function(p){return String(p.group||p.category||"").toLowerCase()===val;});
-    el.innerHTML=list.map(function(p,i){return pcardCard(p, i>=top ? "rt-extra" : "");}).join("");
+    el.innerHTML=list.map(function(p,i){
+      var cls = i>=topD ? "rt-extra" : (i>=topM ? "rt-extra rt-desk-only" : "");
+      return pcardCard(p, cls);
+    }).join("");
     el.setAttribute("data-rt-done","1");
   }
 
