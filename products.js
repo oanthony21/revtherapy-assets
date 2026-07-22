@@ -22,6 +22,11 @@
   var RT_PRODUCTS = [
 
     /* ---------- CAR ACCESSORIES ---------- */
+    { group:"Car Accessories", badge:"Emergency", name:"NOCO Boost Plus GB40 Jump Starter",
+      url:"https://amzn.to/4gKQpLA", img:"https://m.media-amazon.com/images/I/91PF8cxu2ML._AC_SL1500_.jpg",
+      hook:"1000 amps that live in your glovebox. Clamps on, green light, engine turns over — no second car, no cables, no waiting for a tow.",
+      price:"$100", rating:4.6, reviews:128000 },
+
     { group:"Car Accessories", badge:"Detailing", name:"Meguiar's Hybrid Ceramic Wax",
       url:"https://amzn.to/44Nza4W", img:"https://m.media-amazon.com/images/I/81CvuYh7IpL._AC_SL1500_.jpg",
       hook:"Spray it on, rinse it off. Water beads and sheets straight off the paint — six months of gloss with a hose and a towel.",
