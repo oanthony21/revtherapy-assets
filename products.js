@@ -22,6 +22,11 @@
   var RT_PRODUCTS = [
 
     /* ---------- CAR ACCESSORIES ---------- */
+    { group:"Car Accessories", badge:"Safety", name:"AstroAI Digital Tire Pressure Gauge",
+      url:"https://amzn.to/4gmJLu9", img:"https://m.media-amazon.com/images/I/71k7ETf0DAL._SL1500_.jpg",
+      hook:"Your tires can look fine and still be dangerously low. This $8 gauge catches it in seconds — backlit screen, lighted nozzle, reads up to 150 PSI.",
+      price:"$7.99", rating:4.7, reviews:90000 },
+    
     { group:"Car Accessories", badge:"Emergency", name:"NOCO Boost Plus GB40 Jump Starter",
       url:"https://amzn.to/4gKQpLA", img:"https://m.media-amazon.com/images/I/91PF8cxu2ML._AC_SL1500_.jpg",
       hook:"1000 amps that live in your glovebox. Clamps on, green light, engine turns over — no second car, no cables, no waiting for a tow.",
