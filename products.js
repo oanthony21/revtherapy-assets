@@ -21,7 +21,7 @@
   ================================================================ */
   var RT_PRODUCTS = [
 
-    /* ---------- CAR ACCESSORIES ---------- */
+    /* ---------- CAR ACCESSORIES ---------- */    
     { group:"Car Accessories", badge:"Safety", name:"AstroAI Digital Tire Pressure Gauge",
       url:"https://amzn.to/4gmJLu9", img:"https://m.media-amazon.com/images/I/71k7ETf0DAL._SL1500_.jpg",
       hook:"Your tires can look fine and still be dangerously low. This $8 gauge catches it in seconds — backlit screen, lighted nozzle, reads up to 150 PSI.",
@@ -84,6 +84,11 @@
       price:"$25", rating:4.5, reviews:28000 },
 
     /* ---------- TECH ---------- */
+    { group:"Tech", badge:"Car Tech", name:"LISEN MagSafe Car Vent Mount",
+      url:"https://amzn.to/4gI62mp", img:"https://m.media-amazon.com/images/I/61E+g+pJ9dL._AC_SL1000_.jpg",
+      hook:"Suction cups leave marks, clamps block your vents. This one snaps your phone on with a magnet, sits flush and low, and keeps your dashboard clean.",
+      price:"$18.99", rating:4.6, reviews:40000 },
+    
     { group:"Tech", badge:"CarPlay", name:"Carlinkit Wireless CarPlay Adapter",
       url:"https://amzn.to/4gd0nFa", img:"https://m.media-amazon.com/images/I/61QCvBu+VcL._AC_SL1202_.jpg",
       hook:"Converts wired CarPlay to wireless in 2 minutes. Auto-connects every start. No more cables.",
