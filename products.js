@@ -79,7 +79,7 @@ const RT_PRODUCTS = [
     article:"https://www.revtherapy.co/blog/magsafe-car-mount" },
 
   { group:"Tech", badge:"Charging", name:"Anker 30W Nano Power Bank",
-    url:"https://amzn.to/4eoGk5W", img:"https://i.postimg.cc/Zq0vYjxV/Anker-Mag-Safe-Power-Bank.jpg",
+    url:"https://link.amazon/B0eXF7UmO", img:"https://i.postimg.cc/tCCBtGqG/anker-nano.jpg",
     hook:"10,000mAh, built-in USB-C cable, battery display. Fast, compact and reliable on every trip.",
     price:"$70", rating:4.7, reviews:18000,
     article:"" },
