@@ -110,7 +110,7 @@ const RT_PRODUCTS = [
     article:"https://www.revtherapy.co/blog/best-grooming-kits-2026" },
 
   { group:"Men Products", badge:"EDC", name:"Ridge Wallet",
-    url:"https://amzn.to/4cNChyI", img:"https://m.media-amazon.com/images/I/81AY4EIeK5L._AC_SL1500_.jpg",
+    url:"https://amzn.to/4cNChyI", img:"https://i.postimg.cc/ncyn92x5/Ridge-Wallet.jpg",
     hook:"The wallet that put minimalist carry on the map. RFID blocking, slim, built to last a lifetime.",
     price:"$95", rating:4.5, reviews:32000,
     article:"" }
