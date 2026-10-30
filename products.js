@@ -18,7 +18,7 @@ const RT_PRODUCTS = [
     article:"https://www.revtherapy.co/blog/noco-gb40-jump-starter" },
 
   { group:"Car Accessories", badge:"Safety", name:"AstroAI Digital Tire Pressure Gauge",
-    url:"https://amzn.to/4gmJLu9", img:"https://m.media-amazon.com/images/I/71k7ETf0DAL._SL1500_.jpg",
+    url:"https://amzn.to/4gmJLu9", img:"https://i.postimg.cc/QMVKNSJf/Astro-AI-Digital-Tire-Pressure-Gauge.jpg",
     hook:"Your tires can look fine and still be dangerously low. This $8 gauge catches it in seconds. Backlit, up to 150 PSI.",
     price:"$7.99", rating:4.7, reviews:90000,
     article:"https://www.revtherapy.co/blog/tire-pressure-gauge" },
@@ -36,7 +36,7 @@ const RT_PRODUCTS = [
     article:"https://www.revtherapy.co/blog/car-cleaning-gel-hack" },
 
   { group:"Car Accessories", badge:"Detailing", name:"Meguiar's Hybrid Ceramic Wax",
-    url:"https://amzn.to/3QYALBm", img:"https://m.media-amazon.com/images/I/61a2y1FCTDL._AC_SL1500_.jpg",
+    url:"https://amzn.to/3QYALBm", img:"https://m.media-amazon.com/images/I/81vFQ6edbOL._AC_SX679_.jpg",
     hook:"Spray-on ceramic protection in minutes. Wet, rinse, done — water beads for months, no buffing, no swirls.",
     price:"$20", rating:4.7, reviews:35000,
     article:"https://www.revtherapy.co/blog/meguiar-hybrid-ceramic-wax-review" },
@@ -79,7 +79,7 @@ const RT_PRODUCTS = [
     article:"https://www.revtherapy.co/blog/magsafe-car-mount" },
 
   { group:"Tech", badge:"Charging", name:"Anker 30W Nano Power Bank",
-    url:"https://amzn.to/4eoGk5W", img:"https://m.media-amazon.com/images/I/51YYKgven8L._AC_SL1450_.jpg",
+    url:"https://amzn.to/4eoGk5W", img:"https://i.postimg.cc/Zq0vYjxV/Anker-Mag-Safe-Power-Bank.jpg",
     hook:"10,000mAh, built-in USB-C cable, battery display. Fast, compact and reliable on every trip.",
     price:"$70", rating:4.7, reviews:18000,
     article:"" },
@@ -91,14 +91,14 @@ const RT_PRODUCTS = [
     article:"" },
 
   { group:"Tech", badge:"Fast Charge", name:"INIU 45W Power Bank",
-    url:"https://amzn.to/3P3Uwqq", img:"https://m.media-amazon.com/images/I/71jwU6KZMiL._AC_SL1500_.jpg",
+    url:"https://amzn.to/3P3Uwqq", img:"https://i.postimg.cc/5tjQ9pSK/INIU-45W-Power-Bank.jpg",
     hook:"10,000mAh, flight-safe, attached USB-C cable. Works with iPhone and Samsung. Small but powerful.",
     price:"$30", rating:4.6, reviews:24000,
     article:"" },
 
   // ---------- MEN PRODUCTS ----------
   { group:"Men Products", badge:"Grooming", name:"Manscaped Perfect Package 4.0",
-    url:"https://amzn.to/4n5MzOh", img:"https://m.media-amazon.com/images/I/71UIONutv3L._AC_SL1500_.jpg",
+    url:"https://amzn.to/4n5MzOh", img:"https://i.postimg.cc/253LjT7T/Manscaped-Perfect-Package-4-0.jpg",
     hook:"Complete body grooming kit — the Lawn Mower 4.0 trimmer, plus deodorant, body wash, nail kit and travel bag.",
     price:"$65", rating:4.6, reviews:45000,
     article:"https://www.revtherapy.co/blog/best-grooming-kits-2026" },
