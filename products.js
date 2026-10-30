@@ -85,7 +85,7 @@ const RT_PRODUCTS = [
     article:"" },
 
   { group:"Tech", badge:"MagSafe", name:"Anker MagSafe Power Bank",
-    url:"https://amzn.to/3PgS9kg", img:"https://m.media-amazon.com/images/I/51tLiKYI4DL._AC_SL1500_.jpg",
+    url:"https://amzn.to/3PgS9kg", img:"https://i.postimg.cc/Zq0vYjxV/Anker-Mag-Safe-Power-Bank.jpg",
     hook:"Qi2 certified 15W wireless charging. Ultra-slim magnetic design, snaps to your iPhone instantly.",
     price:"$55", rating:4.6, reviews:12000,
     article:"" },
