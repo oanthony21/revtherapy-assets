@@ -42,7 +42,7 @@ const RT_PRODUCTS = [
     article:"https://www.revtherapy.co/blog/car-emergency-kit#inflator" },
 
   { group:"Car Accessories", badge:"Safety", name:"Swiss Safe 5-in-1 Safety Hammer",
-    url:"https://link.amazon/B00pEIx1L", img:"https://m.media-amazon.com/images/I/817fdOhqbEL._AC_SL1500_.jpg",
+    url:"https://link.amazon/B00pEIx1L", img:"https://i.postimg.cc/xCgdJtMc/hammer.jpg",
     hook:"Spring-loaded glass breaker and seatbelt cutter. Keep it within reach, not in the trunk.",
     price:"$10", rating:4.7, reviews:4500,
     article:"https://www.revtherapy.co/blog/car-emergency-kit#safety-hammer" },
