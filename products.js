@@ -29,6 +29,31 @@ const RT_PRODUCTS = [
     price:"$8.99", rating:4.7, reviews:25000,
     article:"https://www.revtherapy.co/blog/tool-every-driver-needs" },
 
+  { group:"Car Accessories", badge:"Emergency", name:"Lianxin Roadside Assistance Kit",
+    url:"https://link.amazon/B0doU7omJ", img:"https://m.media-amazon.com/images/I/91XD8iKU+dL._AC_SL1500_.jpg",
+    hook:"Warning triangle, tow strap, jumper cables, gloves, first aid and tools in one bag. The base layer of any emergency kit.",
+    price:"From $18", rating:4.7, reviews:4600,
+    article:"https://www.revtherapy.co/blog/car-emergency-kit#base-kit" },
+
+  { group:"Car Accessories", badge:"Emergency", name:"AstroAI Cordless Tire Inflator",
+    url:"https://link.amazon/B09GOwwu6", img:"https://m.media-amazon.com/images/I/81bMP66Y+AL._AC_SL1500_.jpg",
+    hook:"Set your PSI, it inflates and auto-stops. Cordless, with an LED light for flats in the dark.",
+    price:"$40", rating:4.3, reviews:20300,
+    article:"https://www.revtherapy.co/blog/car-emergency-kit#inflator" },
+
+  { group:"Car Accessories", badge:"Safety", name:"Swiss Safe 5-in-1 Safety Hammer",
+    url:"https://link.amazon/B00pEIx1L", img:"https://m.media-amazon.com/images/I/817fdOhqbEL._AC_SL1500_.jpg",
+    hook:"Spring-loaded glass breaker and seatbelt cutter. Keep it within reach, not in the trunk.",
+    price:"$10", rating:4.7, reviews:4500,
+    article:"https://www.revtherapy.co/blog/car-emergency-kit#safety-hammer" },
+
+  { group:"Car Accessories", badge:"Safety", name:"First Aid Only All-Purpose Kit",
+    url:"https://link.amazon/B0084rEYA", img:"https://m.media-amazon.com/images/I/71Lkxz4P-jL._AC_SL1500_.jpg",
+    hook:"Gauze, wraps, shears and real bandages. The first-aid kit you'd actually want in the cabin.",
+    price:"$16", rating:4.2, reviews:11,
+    article:"https://www.revtherapy.co/blog/car-emergency-kit#first-aid" },
+
+
   { group:"Car Accessories", badge:"Detailing", name:"PULIDIKI Car Cleaning Gel",
     url:"https://link.amazon/B0b41rACB", img:"https://m.media-amazon.com/images/I/71R0gev+0zL._AC_SL1500_.jpg",
     hook:"Gets into every vent, gap and crevice. Picks up dust, dirt and debris instantly. 2 pack — reusable.",
