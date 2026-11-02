@@ -36,7 +36,7 @@ const RT_PRODUCTS = [
     article:"https://www.revtherapy.co/blog/car-emergency-kit#base-kit" },
 
   { group:"Car Accessories", badge:"Emergency", name:"AstroAI Cordless Tire Inflator",
-    url:"https://link.amazon/B09GOwwu6", img:"https://m.media-amazon.com/images/I/81bMP66Y+AL._AC_SL1500_.jpg",
+    url:"https://link.amazon/B09GOwwu6", img:"https://i.postimg.cc/B6NvLMHP/tire.jpg",
     hook:"Set your PSI, it inflates and auto-stops. Cordless, with an LED light for flats in the dark.",
     price:"$40", rating:4.3, reviews:20300,
     article:"https://www.revtherapy.co/blog/car-emergency-kit#inflator" },
