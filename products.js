@@ -36,13 +36,13 @@ const RT_PRODUCTS = [
     article:"https://www.revtherapy.co/blog/car-emergency-kit#base-kit" },
 
   { group:"Car Accessories", badge:"Emergency", name:"AstroAI Cordless Tire Inflator",
-    url:"https://link.amazon/B09GOwwu6", img:"https://i.postimg.cc/B6NvLMHP/tire.jpg",
+    url:"https://link.amazon/B09GOwwu6", img:"https://m.media-amazon.com/images/I/81bMP66Y+AL._AC_SL1500_.jpg",
     hook:"Set your PSI, it inflates and auto-stops. Cordless, with an LED light for flats in the dark.",
     price:"$40", rating:4.3, reviews:20300,
     article:"https://www.revtherapy.co/blog/car-emergency-kit#inflator" },
 
   { group:"Car Accessories", badge:"Safety", name:"Swiss Safe 5-in-1 Safety Hammer",
-    url:"https://link.amazon/B00pEIx1L", img:"https://i.postimg.cc/xCgdJtMc/hammer.jpg",
+    url:"https://link.amazon/B00pEIx1L", img:"https://m.media-amazon.com/images/I/817fdOhqbEL._AC_SL1500_.jpg",
     hook:"Spring-loaded glass breaker and seatbelt cutter. Keep it within reach, not in the trunk.",
     price:"$10", rating:4.7, reviews:4500,
     article:"https://www.revtherapy.co/blog/car-emergency-kit#safety-hammer" },
@@ -85,7 +85,7 @@ const RT_PRODUCTS = [
     article:"" },
 
   { group:"Car Accessories", badge:"Diagnostics", name:"ANCEL AD410 OBD2 Scanner",
-    url:"https://amzn.to/4wjGqSX", img:"https://m.media-amazon.com/images/I/81S0XgJq1iL._AC_SL1500_.jpg",
+    url:"https://link.amazon/B0iecVFsJ", img:"https://m.media-amazon.com/images/I/81S0XgJq1iL._AC_SL1500_.jpg",
     hook:"Read and clear engine codes instantly. Know your car better than your mechanic.",
     price:"$40", rating:4.6, reviews:21000,
     article:"https://www.revtherapy.co/blog/ancel-obd2-scanner" },
